@@ -97,7 +97,6 @@ const createWindow = (event) => {
   document.body.appendChild(container);
 }
 
-
 window.addEventListener('error', (event) => {
   createStylesheet();
   getTagline();
