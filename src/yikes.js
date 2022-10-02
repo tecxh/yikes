@@ -34,7 +34,7 @@ const createStylesheet = () => {
     `;
 
   document.body.appendChild(sheet);
-}
+};
 
 const getTagline = () => {
   const tags = [
@@ -52,39 +52,39 @@ const getTagline = () => {
   const min = 0;
   const max = tags.length - 1;
 
-  const index = Math.floor(Math.random() * (max - min + 1) + min)
+  const index = Math.floor(Math.random() * (max - min + 1) + min);
   return tags[index];
-}
+};
 
 const createElement = (type, event) => {
 
   switch (type) {
-    case 'header':
-      const header = document.createElement('h1');
-      header.innerText = getTagline()
-      header.classList.add('monoFont', 'header');
-      return header;
+  case 'header':
+    const header = document.createElement('h1');
+    header.innerText = getTagline();
+    header.classList.add('monoFont', 'header');
+    return header;
 
-    case 'error':
-      const { message, lineno, colno, filename } = event;
+  case 'error':
+    const { message, lineno, colno, filename } = event;
 
-      const errorLine = document.createElement('h2');
-      errorLine.innerText = `${message} in ${filename.slice(7)} at ${lineno}:${colno}`;
-      errorLine.classList.add('monoFont', 'errorLine')
-      return errorLine;
+    const errorLine = document.createElement('h2');
+    errorLine.innerText = `${message} in ${filename.slice(7)} at ${lineno}:${colno}`;
+    errorLine.classList.add('monoFont', 'errorLine');
+    return errorLine;
 
-    case 'stack':
-      const { error } = event;
+  case 'stack':
+    const { error } = event;
 
-      const stackLines = document.createElement('p');
-      stackLines.innerText = error.stack;
-      stackLines.classList.add('stackLines')
-      return stackLines;
+    const stackLines = document.createElement('p');
+    stackLines.innerText = error.stack;
+    stackLines.classList.add('stackLines');
+    return stackLines;
   }
-}
+};
 
 const createWindow = (event) => {
-  const container = document.createElement("div");
+  const container = document.createElement('div');
   container.classList.add('container');
 
   const header = createElement('header');
@@ -93,12 +93,12 @@ const createWindow = (event) => {
 
   container.appendChild(header);
   container.appendChild(errorLine);
-  container.appendChild(stackLines)
+  container.appendChild(stackLines);
   document.body.appendChild(container);
-}
+};
 
 window.addEventListener('error', (event) => {
   createStylesheet();
   getTagline();
   createWindow(event);
-})
+});
