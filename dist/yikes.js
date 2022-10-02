@@ -47,6 +47,13 @@ const getTagline = () => {
     'Yikes! :/',
     'This ain’t it',
     'Ruh Roh, Raggy',
+    'Ya blew it!',
+    'Never should have come here!',
+    'We were all rooting for you!',
+    'womp womp',
+    'No no no! Not like that!',
+    'Sit',
+    'Well that was fun',
   ];
 
   const min = 0;
