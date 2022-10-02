@@ -1,6 +1,6 @@
 {
   "name": "Yikes!",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "a silly 'error boundary', should one be so bold",
   "main": "index.js",
   "scripts": {
